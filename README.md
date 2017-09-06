@@ -3,10 +3,10 @@
 ## Introduction
 
 #### Team role
-Alexander Steen = Lead Developer
-Jonas Simonsen = Project Manager
-Kasper Worm = DevUp
-Martin Karlsen = Q&A
+Alexander Steen = Lead Developer<br />
+Jonas Simonsen = Project Manager<br />
+Kasper Worm = DevUp<br />
+Martin Karlsen = Q&A<br />
 
 #### Purpose of the system
 Formålet er et system hvor en bruger har mulighed for at registrere sig og lave indlæg, som kan kommenteres af andre registrerede brugere på systemet. Den registrerede bruger kan også kommentere andres oplæg samt, up og down vote forskellige indlæg. 
