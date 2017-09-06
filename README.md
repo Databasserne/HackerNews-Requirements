@@ -5,7 +5,7 @@
 #### Team role
 Alexander Steen = Lead Developer<br />
 Jonas Simonsen = Project Manager<br />
-Kasper Worm = Dev Op<br />
+Kasper Worm = DevOps<br />
 Martin Karlsen = Q&A<br />
 
 #### Purpose of the system
@@ -42,3 +42,5 @@ Requirements: https://github.com/datsoftlyngby/soft2017fall-lsd-teaching-materia
 
 #### Overview
 Vi skal lave en hjemmeside tilsvarende HackerNews hvorpå brugere kan oprette indlæg og vote på hinandens indlæg.
+
+
