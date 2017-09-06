@@ -53,18 +53,18 @@ Vi har på nuværende tidspunkt ikke noget eksisterende system. Det færdige sys
 Vi skal lave en hjemmeside tilsvarende HackerNews hvorpå brugere kan oprette indlæg og vote på hinandens indlæg.
 
 #### Functional requirements
-Oprette bruger.
-Bruger login, logout.
-Se posts.
-Oprette/Slette egne post.
-Redigere egne posts.
-Up vote af posts.
-Bruger skal have 500 karma points for at kunne down vote et post.
-Kommentere på posts.
-Kommentere på kommentarer
-Rapporter posts for spam.
-Filtrere posts mellem nye posts, hvor mange kommentarer der er
-Skjule og vise posts.
+Oprette bruger. <br>
+Bruger login, logout. <br>
+Se posts. <br>
+Oprette/Slette egne post. <br>
+Redigere egne posts. <br>
+Up vote af posts. <br>
+Bruger skal have 500 karma points for at kunne down vote et post. <br>
+Kommentere på posts. <br>
+Kommentere på kommentarer <br>
+Rapporter posts for spam. <br>
+Filtrere posts mellem nye posts, hvor mange kommentarer der er <br>
+Skjule og vise posts. <br>
 
 #### Nonfunctional requirements
 
@@ -72,8 +72,8 @@ Skjule og vise posts.
 Brugeren interagere med systemet via en hjemmeside.
 
 ###### Reliability
-Systemet skal have en oppetid på mere end 95 %, ydermere må systemet på intet tidspunkt miste data. 
-Systemet skal kunne modtage data selvom det er nede, og gemme dataen til systemet er oppe igen 
+Systemet skal have en oppetid på mere end 95 %, ydermere må systemet på intet tidspunkt miste data.   <br>
+Systemet skal kunne modtage data selvom det er nede, og gemme dataen til systemet er oppe igen  <br>
 
 ###### Performance
 Der er umiddelbart ikke nogen performance krav, men vi forventer at systemet skal reagere inden for “rimelig tid” så brugeren ikke tror at systemet er gået ned.
@@ -82,15 +82,15 @@ Der er umiddelbart ikke nogen performance krav, men vi forventer at systemet ska
 Der er umiddelbart ingen krav om kontakt til support og systemet vil derfor ikke have nogen.
 
 ###### Implementation
-Systemet deles op i en frontend, backend og data lag.
-Frontend vil blive udviklet i HTML, Javascript (Angular2 eller React) og CSS.
-Backend vil blive udviklet i Java
-Data laget vil blive udviklet i .NET med EntityFramework og MSSQL som database.
-Alt data skal gemmes i en database.
-Der skal være et REST API som giver andre platforme adgang.
+Systemet deles op i en frontend, backend og data lag. <br>
+Frontend vil blive udviklet i HTML, Javascript (Angular2 eller React) og CSS. <br>
+Backend vil blive udviklet i Java <br>
+Data laget vil blive udviklet i .NET med EntityFramework og MSSQL som database. <br>
+Alt data skal gemmes i en database. <br>
+Der skal være et REST API som giver andre platforme adgang. <br>
 
 ###### Interface
-Interface er en hjemmeside hvor gæster kan se indlæg, men at man skal være logget ind for at kunne kommentere, up-/down vote indlæg.
+Interface er en hjemmeside hvor gæster kan se indlæg, men at man skal være logget ind for at kunne kommentere, up-/down vote indlæg. <br>
 Derudover er interfacet også et API, der giver adgang, for andre platforme, til systemet, så man f.eks. kan lave en app.
 
 ###### Packaging
@@ -102,14 +102,16 @@ Systemet overskrider ingen love og der er derfor ikke nogle love som vi skal tag
 #### Systemmodels
 
 ###### Scenarios
-Som gæst kan jeg se de indlæg, der er lavet så jeg kan se om der sker noget interessant.
-Som gæst kan jeg oprette en profil
-Som gæst kan jeg logge ind og derved blive en bruger
-Som bruger kan jeg logge af
-Som bruger kan jeg oprette posts
-Som bruger kan jeg redigere eller slette mine egne posts
-Som bruger kan jeg få karma ved at kommentere, oprette posts og up vote 
-Som bruger kan jeg vote up
-Som bruger kan jeg down vote når brugeren har opnået 500 karme point
+Som gæst kan jeg se de indlæg, der er lavet så jeg kan se om der sker noget interessant. <br>
+Som gæst kan jeg oprette en profil <br>
+Som gæst kan jeg logge ind og derved blive en bruger <br>
+Som bruger kan jeg logge af <br>
+Som bruger kan jeg oprette posts <br>
+Som bruger kan jeg redigere eller slette mine egne posts <br>
+Som bruger kan jeg få karma ved at kommentere, oprette posts og up vote <br>
+Som bruger kan jeg vote up <br>
+Som bruger kan jeg down vote når brugeren har opnået 500 karme point <br>
 
 ###### Use case model
+![alt text](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Use%20case%20model.png "Use case model")
+
