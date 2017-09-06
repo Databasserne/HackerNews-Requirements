@@ -5,7 +5,7 @@
 #### Team role
 Alexander Steen = Lead Developer<br />
 Jonas Simonsen = Project Manager<br />
-Kasper Worm = DevUp<br />
+Kasper Worm = Dev Op<br />
 Martin Karlsen = Q&A<br />
 
 #### Purpose of the system
@@ -32,3 +32,13 @@ CSS - Cascading Style Sheet.
 Post - Et indlæg oprettet af en bruger, hvorpå der kan votes og kommenteres.
 Cloud - En server hvorpå systemet ligger, som kan tilgås udefra.
 GitHub - En hjemmeside til at versionere projekter, samt gemme dem.
+
+#### References
+Reddit: https://www.reddit.com
+Hacker News: https://news.ycombinator.com/
+Både Reddit og Hacker News er social nyhedssites, hvor brugere kan lave indlæg, der kan kommenteres og reageres på fra andre brugere. 
+
+Requirements: https://github.com/datsoftlyngby/soft2017fall-lsd-teaching-material/blob/master/assignments/01-HN%20Clone%20Task%20Description.ipynb
+
+#### Overview
+Vi skal lave en hjemmeside tilsvarende HackerNews hvorpå brugere kan oprette indlæg og vote på hinandens indlæg.
