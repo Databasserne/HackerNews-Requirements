@@ -111,3 +111,5 @@ Som bruger kan jeg redigere eller slette mine egne posts
 Som bruger kan jeg få karma ved at kommentere, oprette posts og up vote 
 Som bruger kan jeg vote up
 Som bruger kan jeg down vote når brugeren har opnået 500 karme point
+
+###### Use case model
