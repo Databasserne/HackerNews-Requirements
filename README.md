@@ -179,44 +179,62 @@ Special requirements: Kun tilgængeligt til Simulator/Bot <br>
  ```
 
 ##### SimulatorResponseInteger
-<integer>
-SimulatorResponseStatus
-<string>
-UserCredentials
+```<integer>```
+##### SimulatorResponseStatus
+```<string>```
+##### UserCredentials
+```
 {"username": "<string>",
 "password": "<string>"}
-SignUpCredentials
+```
+##### SignUpCredentials
+```
 {"username": "<string>",
 "password":"<string>",
 "rep_password":"<string>",
 "fullname":"<string>"}
-User
+```
+##### User
+```
 {"username":"<string>",
 "fullname":"<string>"}
-Post
+```
+##### Post
+```
 {"title":"<string>",
 "body":"<string>"}
-Comment
+```
+##### Comment
+```
 {"comment_text":"<string>"}
-Null
+```
+##### Null
 Tom body med successfull status code (PUT/DELETE = 200, POST = 201)
-Error
+##### Error
 Status code 400
+```
 {"error_code":<int>,
 "error_message":"<string>"}
-PostList
+```
+##### PostList
+```
 [{"title":"<string>",
 "body":"<string>",
 "author_name":"<string>",
 "created_at":"<date>"}]
-PostResponse
+```
+##### PostResponse
+```
 {"title":"<string>",
 "body":"<string>",
 "author_name":"<string>",
 "created_at":"<date>"}
-CommentList
+```
+##### CommentList
+```
 [{"id":<int>,
 "comment_text":"<string>",
 "author_name":"<string>",
 "created_at":"<date>",
 "comments": <CommentList>}]
+```
