@@ -20,6 +20,21 @@ Vi har delt vores system op i en frontend del og en backend del, vi har delt sys
 ### Use Case Model
 ![ucdiagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/UseCaseDiagram.png)
 
+#### Actor discription
+##### Guest
+Gæsten er en besøgende, som ikke er logget ind i systemet og som derfor ikke er genkendelig.<br />
+Gæsten har ingen responsibility.
+
+##### User
+Brugeren er en besøgende, som er logget ind i systemet og som derfor er genkendelig.<br/>
+Brugere har større adgang til systemet og kan derfor gøre flere ting,<br/>
+som f.eks. at oprette posts og kommentere på andre posts.<br/>
+Med disse muligheder har brugeren også et ansvar for at opfører sig ordentligt overfor andre brugere.
+
+##### Simulator
+Simulatoren er en bot, hosted af Helge.<br/>
+Den har ansvar for at lave daglige requests til systemet, for at tjekke hvorvidt det fungerer.
+
 #### Use Case Description
 Use Case: Log ind <br>
 Level goal: Få adgang til systemet <br>
