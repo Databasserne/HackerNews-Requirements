@@ -12,11 +12,15 @@ Martin Karlsen = Q&A <br/>
 Alle ovenstående gruppemedlemmer har bidraget ligeligt, 25% per medlem.
 
 ### Divide into subsystems
+Vi har delt vores system op i en frontend del og en backend del, vi har delt systemet i to sub systemer for nemmere vedligeholdelse, samt senere kunne proppen en frontend del mere på I form af for eksempel en app.
 
 ### Logical Data Model
 ![LDM](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/LogicalDataModel.png)
 
 ### Use Case Model
+![ucdiagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/UseCaseDiagram.png)
+
+#### Use Case Description
 Use Case: Log ind <br>
 Level goal: Få adgang til systemet <br>
 Primary Actor: Gæst <br>
