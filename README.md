@@ -137,3 +137,86 @@ Main succes scenario: Der kommer et response fra API'et <br>
 Success guaratees: ALIVE, UPDATE, DOWN - som de 3 svar <br>
 Extensions: <br>
 Special requirements: Kun tilgængeligt til Simulator/Bot <br>
+
+### API Documentation
+##### Simulator
+```POST(SimulatorPost): /post -> (Null, Error)``` <br/>
+```GET: /latest -> (SimulatorResponseInteger)``` <br/>
+```GET: /status -> (SimulatorResponseStatus)```
+##### Authentication
+```POST(UserCredentials): /api/v1/auth/login -> (User, Error)``` <br/>
+```POST(SignUpCredentials): /api/v1/auth/signup -> (Null, Error)```
+##### User
+```GET: /api/v1/user/me -> (User, Error) ```<br/>
+```PUT(User): /api/v1/user/edit -> (Null, Error)```
+##### Posts
+```GET: /api/v1/post/ -> (PostList, Error)```<br/>
+```GET: /api/v1/post/{id:Number} -> (PostResponse, Error)```<br/>
+```POST(Post): /api/v1/post -> (Null, Error)```<br/>
+```PUT(Post): /api/v1/post/{id:Number} -> (Null, Error)```<br/>
+```DELETE: /api/v1/post/{id:Number} -> (Null, Error)```
+##### Comments
+```GET: /api/v1/post/{id:Number}/comment -> (CommentList, Error)```<br/>
+```GET: /api/v1/post/{id:Number}/comment/{id:Number} -> (CommentList, Error)```<br/>
+```POST(Comment): /api/v1/post/{id:Number}/comment -> (Null, Error)```
+##### Vote
+```POST(): /api/v1/post/{id:Number}/upvote -> (Null, Error)```<br/>
+```POST(): /api/v1/post/{id:Number}/downvote -> (Null, Error)```<br/>
+```POST(): /api/v1/post/{id:Number}/comment/{id:Number}/upvote -> (Null, Error)```<br/>
+```POST(): /api/v1/post/{id:Number}/comment/{id:Number}/downvote -> (Null, Error)```
+ 
+#### Models
+##### SimulatorPost
+```
+{"username": "<string>", 
+ "post_type": "<string>", 
+ "pwd_hash": "<string>", 
+ "post_title": "<string>",
+ "post_url": "<string>", 
+ "post_parent": <int>, 
+ "hanesst_id": <int>, 
+ "post_text": "<string>"}
+ ```
+
+##### SimulatorResponseInteger
+<integer>
+SimulatorResponseStatus
+<string>
+UserCredentials
+{"username": "<string>",
+"password": "<string>"}
+SignUpCredentials
+{"username": "<string>",
+"password":"<string>",
+"rep_password":"<string>",
+"fullname":"<string>"}
+User
+{"username":"<string>",
+"fullname":"<string>"}
+Post
+{"title":"<string>",
+"body":"<string>"}
+Comment
+{"comment_text":"<string>"}
+Null
+Tom body med successfull status code (PUT/DELETE = 200, POST = 201)
+Error
+Status code 400
+{"error_code":<int>,
+"error_message":"<string>"}
+PostList
+[{"title":"<string>",
+"body":"<string>",
+"author_name":"<string>",
+"created_at":"<date>"}]
+PostResponse
+{"title":"<string>",
+"body":"<string>",
+"author_name":"<string>",
+"created_at":"<date>"}
+CommentList
+[{"id":<int>,
+"comment_text":"<string>",
+"author_name":"<string>",
+"created_at":"<date>",
+"comments": <CommentList>}]
