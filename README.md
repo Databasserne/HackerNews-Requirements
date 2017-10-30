@@ -233,7 +233,8 @@ Status code 400
 ```
 ##### PostList
 ```
-[{"title":"<string>",
+[{"id":<int>,
+"title":"<string>",
 "body":"<string>",
 "author_name":"<string>",
 "created_at":"<date>"}]
