@@ -163,6 +163,7 @@ Special requirements: Kun tilgængeligt til Simulator/Bot <br>
 ```POST(SignUpCredentials): /api/v1/auth/signup -> (Null, Error)```
 ##### User
 ```GET: /api/v1/user/me -> (User, Error) ```<br/>
+```GET: /api/v1/user/post -> (PostList) ```<br/>
 ```PUT(UserInfo): /api/v1/user/edit -> (Null, Error)```
 ##### Posts
 ```GET: /api/v1/post/ -> (PostList, Error)```<br/>
