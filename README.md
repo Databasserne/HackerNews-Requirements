@@ -159,7 +159,7 @@ Special requirements: Kun tilgængeligt til Simulator/Bot <br>
 ```GET: /latest -> (SimulatorResponseInteger)``` <br/>
 ```GET: /status -> (SimulatorResponseStatus)```
 ##### Authentication
-```POST(UserCredentials): /api/v1/auth/login -> (User, Error)``` <br/>
+```POST(UserCredentials): /api/v1/auth/login -> (UserToken, Error)``` <br/>
 ```POST(SignUpCredentials): /api/v1/auth/signup -> (Null, Error)```
 ##### User
 ```GET: /api/v1/user/me -> (User, Error) ```<br/>
@@ -209,6 +209,13 @@ Special requirements: Kun tilgængeligt til Simulator/Bot <br>
 "rep_password":"<string>",
 "fullname":"<string>"}
 ```
+##### UserToken
+```
+{"token": "<string">,
+"username": "<string>",
+"fullname": "<string>"}
+```
+
 ##### User
 ```
 {"username":"<string>",
