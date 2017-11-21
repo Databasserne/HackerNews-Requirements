@@ -14,3 +14,15 @@ Ved hjælp af Ingress netværket som følger med Docker Swarm, er der automatisk
 Dvs. hvis en enkelt container er nede (f.eks. pga update eller for mange requests), så vil den automatisk bruge en anden container.<br/>
 Derudover hjælper Ingress også hvis den ene server går ned. Hvis dette sker, kan DNS pege på flere IP'er og selvom containeren, ikke<br/>
 lægger på den IP, kan containeren findes på en anden node, som også er i Docker Swarm'en.
+
+### Print out
+
+##### Docker Node LS
+```
+ID                            HOSTNAME                 STATUS              AVAILABILITY        MANAGER STATUS
+cozf2jsbcja44zoqm6efexp13 *   LDS                      Ready               Active              Leader
+h9tuejesinzox8hbe0novy7bc     HackerNewClone-Worker2   Ready               Active              
+li2i8ivgpslm4l88dav7bkdof     HackerNewClone-Worker1   Ready               Active
+```
+
+##### Docker Service LS
