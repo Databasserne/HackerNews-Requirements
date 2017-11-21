@@ -31,6 +31,9 @@ li2i8ivgpslm4l88dav7bkdof     HackerNewClone-Worker1   Ready               Activ
 ID                  NAME                MODE                REPLICAS            IMAGE                                     PORTS
 1qo3ecfz14yq        elk                 replicated          1/1                 sebp/elk:latest                           *:5601->5601/tcp,*:9200->9200/tcp,*:5044->5044/tcp
 3ytu2s1wds0a        backend             replicated          2/2                 databasserne/lsd-hackernews-backend:60    *:8080->8080/tcp
+73ktwc7e45rf        docker-exporter     global              3/3                 basi/socat:v0.1.0                         *:0->4999/tcp
+ohgrookwslch        prometheus          replicated          1/1                 basi/prometheus-swarm:v0.4.0              *:9090->9090/tcp
 psojyyhcq6ep        frontend            replicated          2/2                 databasserne/lsd-hackernews-frontend:24   *:80->5000/tcp
 ywgkobov6ymh        grafana             replicated          1/1                 grafana/grafana:4.5.2                     *:3000->3000/tcp
+
 ```
