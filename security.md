@@ -11,6 +11,12 @@ Det er ikke alt data som skal være tilgængeligt for alle, samt det er ikke all
 Simulator endpoints burde være protected mod alle andre end Helge.<br/>
 Der kan lægges nyt data ind i systemet, via disse endpoints, hvilket vi ikke vil have.
 
+- <b>Server</b>
+Serveren skal beskyttes så eventuelle hackere ikke kan lukke den eller ændre i systemet.
+
+### Model
+
+
 ## Risk metrix
 |          | Negligible | Marginal | Critical | Catastrophic |
 | -------- | ---------- | -------- | -------- | ------------ |
@@ -18,4 +24,4 @@ Der kan lægges nyt data ind i systemet, via disse endpoints, hvilket vi ikke vi
 | Likely   | Moderate   | High     | High     | Extreme - <b>Database</b>     |
 | Possible | Low        | Moderate - <b>Specifikke endpoints</b> | High     | Extreme      |
 | Unlikely | Low        | Low      | Moderate | Extreme      |
-| Rare     | Low        | Low      | Moderate | High         |
+| Rare     | Low        | Low      | Moderate | High -<b>Server</b>        |
