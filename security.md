@@ -15,7 +15,7 @@ Der kan lægges nyt data ind i systemet, via disse endpoints, hvilket vi ikke vi
 Serveren skal beskyttes så eventuelle hackere ikke kan lukke den eller ændre i systemet.
 
 ### Model
-
+![TM](https://github.com/Databasserne/HackerNews-Requirements/blob/master/threat-model.PNG)
 
 ## Risk metrix
 |          | Negligible | Marginal | Critical | Catastrophic |
