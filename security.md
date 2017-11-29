@@ -11,7 +11,7 @@ Det er ikke alt data som skal være tilgængeligt for alle, samt det er ikke all
 Simulator endpoints burde være protected mod alle andre end Helge.<br/>
 Der kan lægges nyt data ind i systemet, via disse endpoints, hvilket vi ikke vil have.
 
-### Table
+## Risk metrix
 |          | Negligible | Marginal | Critical | Catastrophic |
 | -------- | ---------- | -------- | -------- | ------------ |
 | Certain  | High       | High     | Extreme  | Extreme      |
