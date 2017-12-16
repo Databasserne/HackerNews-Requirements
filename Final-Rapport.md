@@ -3,8 +3,8 @@ Group: Kasper Worm, Alexander Steen, Martin Karlsen & Jonas Simonsen
 <br>
 [Opgave beskrivelse forefindes her](https://github.com/datsoftlyngby/soft2017fall-lsd-teaching-material/blob/master/assignments/08-Project_report.md)
 
-## Requirements, architecture, design and process
-### System requirements
+## 1 Requirements, architecture, design and process
+### 1.1 System requirements
 I vores Large System Development, skulle vi udvikle en klon af Hackernews. Det indebærer at systemet skulle have en række forskellige typer brugere med forskellige funktioner for at gøre det brugbart, disse er som følgende: <br>
 Som gæst af systemet skal du have mulighed for at læse posts og comments, samt oprette dig som bruger og logge ind. <br>
 Som bruger skal du have mulighed for at se posts og comments, samt selv oprette posts og comments, ydermere kan du også up- og down vote på posts og comments, dog med en restriktion på downvote, som kræver du har minimum 500 karma. Karma fås ved at dine posts eller comments bliver upvoted. Du skal også som bruger have muligheden for at logge af systemet. <br>
@@ -36,7 +36,7 @@ På samme måde er der også funktioner som giver mulighed for at få noget, her
 #### Nonfunctional requirements
 Systemet skal have en oppetid på minimum 95% og må på intet tidspunkt miste nogen form for data. I løbet af udviklingsperioden vil en simulator konstant sende request til systemet. 
 
-### Development process
+### 1.2 Development process
 
 Overordnet set har vi arbejdet med en agil tilgang, hvor vores sprints er delt ind uge for uge med de opgaver vi har stillet. Men den typiske tilgang hvor hver udvikler laver alt fra test til backend til frontend har vi ikke brugt, da vi har haft en som primært fokuserede på frontend delen og de 3 andre havde størst fokus på backend
 Vi har også benyttet os af TDD (Test-Driven-Development) i en del af systemet, men da vi blev tidspresset blev der skåret ned på det. TDD går ud på at man skriver tests før man begynder at implementere sine features, dette kan hjælpe en til at holde fokus på kun at implementere den ene feature, og målet er at gøre det på så kort en måde som muligt for at få ens test til at lyse grønt/succes.
