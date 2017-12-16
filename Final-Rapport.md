@@ -47,12 +47,14 @@ Udover SQL fejl, har TDD også hjulpet os med at holde os på sporet, i forhold 
 ### 1.3. Software architecture
 
 Vi har valgt at dele vores projekt op i 3 dele. Vores frontend, som er systemets design udadtil, backenden som er control-laget, hvor alt funktionaliteten er og så vores database som er datalaget og der alt data gemmes.
-Der er en forbindelse mellem front-end og back-end, samt en forbindelse mellem back-end og datalaget. Man kan altså ikke kalde datalaget, direkte fra front-end’en.
+Der er en forbindelse mellem front-end og back-end, samt en forbindelse mellem back-end og datalaget. Man kan altså ikke kalde datalaget, direkte fra front-end’en. 
+
+![3 lags diagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/3lags.png)
+
 Forbindelsen mellem frontend og backend, består af REST api’er. Her er der nogle definerede protokoller som både frontend og backend skal overholde. Disse protokoller blev defineret, før starten på projektet.
 Ved forbindelsen mellem backend og datalaget bruges der JPA, som omdanner data’en til models i vores backend.
 Ved at bygge programmet op på denne måde, opnår vi en 3 lags arkitektur. Med en 3 lags arkitektur gør vi programmet mere overskueligt, og vi har på et hvilket som helst tidspunkt, mulighed for at bytte en af vores lag ud med et nyt, hvilket gør selve systemet væsentligt nemmere at vedligeholde og fornye hvis man ønsker at prøve f.eks. nye teknologier af.<br> 
 
-HUSK 3 LAGS MODEL <br>
 ![Class-Diagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/class-diagram.png)
 
 Billedet viser vores forskellige klasser i deres respektive packages og hvilke andre klasser de implementere. 
