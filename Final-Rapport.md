@@ -187,7 +187,11 @@ Da vi ikke selv er stødt på den bruger i vores CSV-filer med brugernavnet “J
 
 Alle ovenstående problemer blev rapporteret til gruppen som github issues til projektet. Gruppen så vores issues, gav feedback på dem og fiksede dem, i de tilfælde hvor de også så det som et problem. Men vi fik desværre ikke besked når de var fikset.  
 
+## 3. Discussion
 
+### 3.1. Technical discussion
+
+### 3.2. Group work reflection & Lessons learned
 
 
 
