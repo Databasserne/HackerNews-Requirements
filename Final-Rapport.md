@@ -3,6 +3,9 @@ Group: Kasper Worm, Alexander Steen, Martin Karlsen & Jonas Simonsen
 <br>
 [Opgave beskrivelse forefindes her](https://github.com/datsoftlyngby/soft2017fall-lsd-teaching-material/blob/master/assignments/08-Project_report.md)
 
+## 0 Introduction
+I dette semester i Large System Development skulle vi implementere et system som skulle være en kopi af det allerede eksisterende system hackernews, med nogle af de samme features som det rigtige system. Det skulle være en introduction til at arbejde med systemer med stor brugerbase og mange requests i minuttet, som giver indblik i hvordan den virkelige verden er samt hvordan forløbet ser ud efter du har udviklet et projekt og du skal til at vedligeholde det, med hvordan du sætter monitoring op samt fixe problemer der vil opstå.
+
 ## 1 Requirements, architecture, design and process
 ### 1.1 System requirements
 I vores Large System Development, skulle vi udvikle en klon af Hackernews. Det indebærer at systemet skulle have en række forskellige typer brugere med forskellige funktioner for at gøre det brugbart, disse er som følgende: <br>
