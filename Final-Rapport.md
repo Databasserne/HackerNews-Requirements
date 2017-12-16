@@ -53,9 +53,12 @@ Ved forbindelsen mellem backend og datalaget bruges der JPA, som omdanner data�
 Ved at bygge programmet op på denne måde, opnår vi en 3 lags arkitektur. Med en 3 lags arkitektur gør vi programmet mere overskueligt, og vi har på et hvilket som helst tidspunkt, mulighed for at bytte en af vores lag ud med et nyt, hvilket gør selve systemet væsentligt nemmere at vedligeholde og fornye hvis man ønsker at prøve f.eks. nye teknologier af.<br> 
 
 HUSK 3 LAGS MODEL <br>
-DESIGNCLASS-DIAGRAM <br>
+![Class-Diagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/class-diagram.png)
 
-Billedet viser vores forskellige klasser i deres respektive packages og hvilke andre klasser de implementere. Vores system er bygget op på den måde at når der bliver modtaget et request følger den klasserne “ned gennem systemet”, som er prøvet at illustreres på billedet ved at have det i en vertical position. Først bliver kaldet modtaget i .resource packagen, som sender det videre til .service packagen som igen sender det videre til .repo som så håndtere det og opretter det i databasen.
+Billedet viser vores forskellige klasser i deres respektive packages og hvilke andre klasser de implementere. 
+Vores system er bygget op på den måde at når der bliver modtaget et request følger den klasserne “ned gennem systemet”, som er illustreret på billedet ved at have det i en vertical position. 
+Først bliver kaldet modtaget i .resource packagen, som sender det videre til .service packagen som igen sender det videre til .repo som så håndtere det og opretter det i databasen.
+
 Alt efter hvilken type kald det er, vil de respektive klasser, baseret på klasse navnet, håndtere requested ned gennem systemet, da vi har holdt en bestemt navne struktur der har gjort dette nemt for os.
 
 ### 1.4. Software design
@@ -192,13 +195,3 @@ Alle ovenstående problemer blev rapporteret til gruppen som github issues til p
 ### 3.1. Technical discussion
 
 ### 3.2. Group work reflection & Lessons learned
-
-
-
-
-
-### Architecture diagram
-her er vores filer i systemet
-![Class-Diagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/class-diagram.png)
-
-
