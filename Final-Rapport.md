@@ -5,13 +5,13 @@ Group: Kasper Worm, Alexander Steen, Martin Karlsen & Jonas Simonsen
 
 ## Requirements, architecture, design and process
 ### System requirements
-I vores Large System Development, skulle vi udvikle en klon af Hackernews. Det indebærer at systemet skulle have en række funktioner for at gøre det brugbart, disse er som følgende: <br>
+I vores Large System Development, skulle vi udvikle en klon af Hackernews. Det indebærer at systemet skulle have en række forskellige typer brugere med forskellige funktioner for at gøre det brugbart, disse er som følgende: <br>
 Som gæst af systemet skal du have mulighed for at læse posts og comments, samt oprette dig som bruger og logge ind. <br>
 Som bruger skal du have mulighed for at se posts og comments, samt selv oprette posts og comments, ydermere kan du også up- og down vote på posts og comments, dog med en restriktion på downvote, som kræver du har minimum 500 karma. Karma fås ved at dine posts eller comments bliver upvoted. Du skal også som bruger have muligheden for at logge af systemet. <br>
 Ud over ovenstående, skulle der laves 3 “simulator” kald, som skulle give noget bestemt data hvis de blev kaldt, der skulle være et kald til at få systemets status(alive, down, update), et til at få sidst inputtet data, samt muligheden for at en “simulator” script kunne oprette posts og comments i systemet.<br>
 
 #### Functional requirements
-Systemet skal bygget som en webapplikation med et RESTful API til mellem front-end og back-end delen, da det skulle kunne tilgår fra en simulator. Følgende funktioner er grundalag for webapplikationens funktionalitet. 
+Systemet skal bygget som en webapplikation med et RESTful API til mellem front-end og back-end delen, da det skulle kunne tilgås fra en simulator. Følgende funktioner er grundalag for webapplikationens funktionalitet. 
 
 * Login
 * Opret profil
