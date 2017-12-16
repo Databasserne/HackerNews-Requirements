@@ -44,6 +44,21 @@ En typisk TDD process er som følgende: (1) Skriv en test. (2) Kør testen, obse
 Ved brug af TDD har vi løbende opdaget fejl, som vi ellers ikke ville have opdaget. Dette er f.eks. SQL query fejl, som ikke compiles og dermed ikke giver fejl når projektet køres.
 Udover SQL fejl, har TDD også hjulpet os med at holde os på sporet, i forhold til de requirements der er til opgaven. Da testen skrives før metoden, har vi skulle tænke på hvad det rent faktisk er, som metoden skal gøre. Man kan dermed ikke tilpasse testen, så den passer til koden, men vi er derimod blevet tvunget til at tilpasse koden, så den har passet til testen, og derved bliver grøn.
 
+### 1.3. Software architecture
+
+Vi har valgt at dele vores projekt op i 3 dele. Vores frontend, som er systemets design udadtil, backenden som er control-laget, hvor alt funktionaliteten er og så vores database som er datalaget og der alt data gemmes.
+Der er en forbindelse mellem front-end og back-end, samt en forbindelse mellem back-end og datalaget. Man kan altså ikke kalde datalaget, direkte fra front-end’en.
+Forbindelsen mellem frontend og backend, består af REST api’er. Her er der nogle definerede protokoller som både frontend og backend skal overholde. Disse protokoller blev defineret, før starten på projektet.
+Ved forbindelsen mellem backend og datalaget bruges der JPA, som omdanner data’en til models i vores backend.
+Ved at bygge programmet op på denne måde, opnår vi en 3 lags arkitektur. Med en 3 lags arkitektur gør vi programmet mere overskueligt, og vi har på et hvilket som helst tidspunkt, mulighed for at bytte en af vores lag ud med et nyt, hvilket gør selve systemet væsentligt nemmere at vedligeholde og fornye hvis man ønsker at prøve f.eks. nye teknologier af.<br> 
+
+HUSK 3 LAGS MODEL <br>
+DESIGNCLASS-DIAGRAM <br>
+
+Billedet viser vores forskellige klasser i deres respektive packages og hvilke andre klasser de implementere. Vores system er bygget op på den måde at når der bliver modtaget et request følger den klasserne “ned gennem systemet”, som er prøvet at illustreres på billedet ved at have det i en vertical position. Først bliver kaldet modtaget i .resource packagen, som sender det videre til .service packagen som igen sender det videre til .repo som så håndtere det og opretter det i databasen.
+Alt efter hvilken type kald det er, vil de respektive klasser, baseret på klasse navnet, håndtere requested ned gennem systemet, da vi har holdt en bestemt navne struktur der har gjort dette nemt for os.
+
+
 ### Architecture diagram
 her er vores filer i systemet
 ![Class-Diagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/class-diagram.png)
