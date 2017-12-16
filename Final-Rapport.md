@@ -223,11 +223,8 @@ Da vi kom til at skulle implementere Prometheus og Grafana i vores system blev v
 
 Ideen med operator grupper virker god, idet at man prøver det, men da kommunikationen, i vores tilfælde, har været minimal, har vi ikke fået stort udbytte af dette. Hvilket har gjort vi selv har skullet operere vores system, og finde fejl. Det gav os problemer specielt tidligt, med de mange 400 fejl, da vi havde regnet med vores operators ville have gjort os opmærksomme på dette.
 
-
-
-
-
-
-
-
 ### 3.2. Group work reflection & Lessons learned
+Gruppearbejdet har fungeret godt, og vi har kunnet dele opgaverne ud så alle har kunnet bidrage til udviklingen af systemet. På frontend delen hvor vi kun har haft 1 enkelt mand til at arbejde med det, så der har det været mindre gruppe arbejde, men der har været kommunikation mellem ham og resten af gruppen i forbindelse med REST api’erne og håndteringen af data frem og tilbage.
+
+Rollerne i vores tilfælde har ikke haft den store betydning, og de er ikke blevet fuldt så meget som vi i starten gerne ville have gjort det til. Vi tror at noget af grunden til dette har været vores dårlige tidshåndtering i det at vi ikke har kunnet nå at strukturere det hele på en ordentlig måde før vores deadline nærmede sig. Det ene sted rollerne er blevet brugt har været ved vores QA hvor der blevet lagt meget vægt på at vi skulle benytte TDD.
+
