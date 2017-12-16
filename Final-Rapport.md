@@ -51,7 +51,7 @@ Der er en forbindelse mellem front-end og back-end, samt en forbindelse mellem b
 
 ![3 lags diagram](https://github.com/Databasserne/HackerNews-Requirements/blob/master/Pictures/3lags.png)
 
-Forbindelsen mellem frontend og backend, består af REST api’er. Her er der nogle definerede protokoller som både frontend og backend skal overholde. Disse protokoller blev defineret, før starten på projektet.
+Forbindelsen mellem frontend og backend, består af REST api’er. Her er der nogle definerede protokoller som både frontend og backend skal overholde. Disse protokoller blev defineret, før starten på projektet og kan findes [her](https://github.com/Databasserne/HackerNews-Requirements/blob/master/README.md#api-documentation).
 Ved forbindelsen mellem backend og datalaget bruges der JPA, som omdanner data’en til models i vores backend.
 Ved at bygge programmet op på denne måde, opnår vi en 3 lags arkitektur. Med en 3 lags arkitektur gør vi programmet mere overskueligt, og vi har på et hvilket som helst tidspunkt, mulighed for at bytte en af vores lag ud med et nyt, hvilket gør selve systemet væsentligt nemmere at vedligeholde og fornye hvis man ønsker at prøve f.eks. nye teknologier af.<br> 
 
