@@ -58,6 +58,140 @@ DESIGNCLASS-DIAGRAM <br>
 Billedet viser vores forskellige klasser i deres respektive packages og hvilke andre klasser de implementere. Vores system er bygget op på den måde at når der bliver modtaget et request følger den klasserne “ned gennem systemet”, som er prøvet at illustreres på billedet ved at have det i en vertical position. Først bliver kaldet modtaget i .resource packagen, som sender det videre til .service packagen som igen sender det videre til .repo som så håndtere det og opretter det i databasen.
 Alt efter hvilken type kald det er, vil de respektive klasser, baseret på klasse navnet, håndtere requested ned gennem systemet, da vi har holdt en bestemt navne struktur der har gjort dette nemt for os.
 
+### 1.4. Software design
+
+Før vi startede projektet havde vi en klar idé om hvordan arkitekturen i vores system skulle se ud. Vi vidste at vi ville køre alle containerne i docker og vi havde også en klar idé om at vi ville bruge JPA samt en MySQL database, da det var det som vi havde størst kendskab til.
+Derudover vidste vi at vi ville kører backend delen på en Tomcat server og at vi ville bruge React til frontend delen.
+
+### 1.5. Software implementation
+
+Selve implementeringen af systemet gik overordnet set som vi forventede, vi har dog haft nogle ting som vi blev en smule overrasket over og vi derfor valgte at bruge en anden løsning. 
+Under opsætningen af systemet havde vi først tænkt os at bruge en Tomcat webserver, vi fandt dog hurtigt ud af at det tog alt for lang tid at bygge, op til 5 min, så vi valgte derfor at se på hvad vi ellers havde af muligheder, vi endte med en Jetty webserver i stedet for, ved at lave dette skift i webserver delen kom vi ned på en byggetid af systemet på ca. 30 sekunder, hvilket er en klar forbedring i forhold til vores tidligere Tomcat webserver. 
+Udover vores webserver, havde vi et problem med vores servers ressourcebehov, et par gange under forløbet, da vi løb tør for memory til at køre vores projekt, samt jenkins, og monitorerings værktøjerne. Dette resulterede i at vi opgradere vores DigitalOcean (DO) server, først til at være større, men senere hen, igen til at have flere droplets fra DO, som blev brugt til deres fulde da vi implementerede Docker swarm senere i forløbet.
+Vi havde først tænkt os at benytte en række virtuelle maskiner, men inden vi overhoved havde sat det op, blev vi enige i gruppen om at bruge Docker i stedet for. Vores valgt på at bruge Docker, kom da vi fandt ud af at Docker fylder væsentligt mindre end hvad en virtuel maskine ville gøre, da det vil være nemmere at sætte op og da vi fandt ud af at systemet senere i udviklingsfasen skulle kunne skaleres. Da vi skulle skalere systemet, var det nærliggende at bruge Docker Svarm idet vi allerede havde Docker kørende. I kan læse mere her om hvad vores Svarm setup endte med at se [ud som dette.](https://github.com/Databasserne/HackerNews-Requirements/blob/master/scaling.md) <br>
+Selve implementeringen af koden har vi ikke haft nogle ændringer i fra hvad vi havde i tankerne fra start af. Vi havde en meget klar tilgang til hvad og hvordan vi ville lave det, der er kun blevet tilføjet mere til det fra start, såsom DevOps værktøjerne som blev introduceret senere i forløbet.
+
+## 2. Maintenance and SLA status
+
+### 2.1. Hand-over
+
+Efter at vi fandt ud af hvem vi skulle operere og fandt ud af hvem de var, blev vi udstyret med et dokument.  
+I dokumentet blev vi instrueret i den mest nødvendige viden, for at kunne operere systemet. Overordnet set bestod dokumentet af et kort systemt overblik, hvor der blev linket videre til der Requirement Analysis Dokument, hvis vi ønskede at læse mere om systemets scope, specifikationer, implementation og meget mere. <br>
+Dernæst fik vi en beskrivelse af systems arkitektur, altså kort hvilke komponenter det består af, hvad de er lavet med samt hvor de kører henne. Credentials blev beskrevet og vi fik af vide hvor vi kunne komme i besiddelse af username og password til at kunne komme på serverne. Efterfølgende blev systemets dataflow beskrevet, igen både for front-end og back-end delen, Vi blev også gjort opmærksomme på hvordan vi skulle lave bug reports / issues, samt hvordan restarting af komponenter foregår. 
+Til sidst i dokumentet blev vi informeret om hvordan vi kunne få adgang til inner state information samt hvordan deres CI / CO fungerer. <br>
+Overordnet set indeholder dokumentationen, hvad der var nødvendigt, for at vi som operatorer kunne operere systemet. 
+
+### 2.2. Service-level agreement
+
+Vi indgik en række Service Level Agreements med Gruppe E. Dokumentet fungerede som en kontrakt mellem dem som systemudviklere og os som opererer systemet. Dokumentet giver kun en operationel indsigt i systemet og har intet at gøre med selve udviklingen af systemet. SLA´en er gyldig pr. d. 2. november 2017 og frem til og med d. 31. januar 2018. <br>
+Den første aftale vi indgik med gruppe E omhandler service tid for systemet, her har vi indgået aftale om, medmindre andet er aftalt, så er følgende gældende som SLA: 
+
+* At Hackernews er tilgængeligt 24/7/365. Med mindre vedligeholdelse er annonceret. 
+* Kontakt og svar tid fra Gruppe E (udviklerne) er mellem 07:00 - 17:00, fra mandag til fredag, og i weekender behandles kun system kritiske fejl. 
+* For hver måned informeres på forhånd omkring vedligeholdelse.
+* Ekstraordinære nedlukninger vil blive annonceret på Github eller via email hvis den er indtastet i systemet. 
+
+#### Omkring oppetid er følgende aftale indgået: 
+
+Hackernews vil fungere 95% af tiden. For hver procent som ligger under den aftalte oppetid vil blive krediteret med 0,5% af det samlede beløb der er betalt for systemet. 
+KPI tæller ikke når den månedlige vedligeholdelse finder sted. 
+
+#### Omkring gennemsnitlig genopretning af systemet er følgende aftale indgået: 
+
+Den gennemsnitlige tid, det vil tage for tjenesten at genoprettes ved fejl, kan variere meget. Det er meget vanskeligt at estimere genopretning tiden for et hypotetisk problem. Når det er sagt, vil enhver dødbringende systemfejl blive håndteret som en akut hændelse. 
+
+#### Omkring fejlrapportering og responstid er følgende aftale indgået: 
+
+Der vil være fire forskellige typer af problemer for systemet. Hver type hændelse har sit eget KPI som er som følgende: 
+
+* Akutte hændelser - 6 timer.
+* Vigtige hændelser - 12 timer.
+* Normale hændelser - 72 timer. 
+* Mindre hændelser 168 timer. 
+
+Timerne er defineret som en TTR (Time to Response). Ved Akutte og vigtige hændelser vil der altid blive taget hånd om det med det samme. Det er også ved disse typer af hændelser, hvor operationsholdet / kunden skal kontakte udviklingsholdet direkte.
+For alle andre typer af hændelser er det kun nødvendigt lave et issue Github. br>
+Generelt er alt månedligt baseret. Det betyder, at KPI'erne i slutningen af måneden vil blive evalueret. Hvis de er over de grænser, der er fastsat i SLA-aftalen, vil kunden ikke få nogen kredit. Hvis det ligger under grænsen, foretages der en beregning for kunden. <br>
+Hele kontrakten ophæves, hvis der opstår et globalt problem. Dette kunne være certifikat brud fra Globalsign, en infrastruktur afbrydelse på Hetzner.com, naturkatastrofer eller lignende problemer. Dette er ude af vores hænder, og derfor kan Group E ikke tage ansvar for disse årsager.
+
+### 2.3. Maintenance and reliability
+
+Under forløbet med Hacker-New clonen har vi været opererer for Gruppe E. 
+
+Efter langt om længe, endelig at finde ud af hvem gruppe E var, kunne vi endelig opererer deres system. Vi valgte at operere deres system på den måde at vi gik på opdagelse i det, ved at prøve og være helt normal bruger, vi fandt også deres endpoint på deres GitHub, så vi valgte også at udfordrede disse lidt ved hjælp af postman. 
+
+I løbet af den tid vi har opereret deres system, har vi oplevet problemer med meget lange responstider (mellem 30 - 60 sek pr request.) Vi rapporterede fejlen til gruppen, hvilket viste sig at være et problem med, at deres database krævede for meget af CPU’ens ydeevne. Mens vi også var operatorer på deres system, opdagede vi at vi havde mulighed for at lave request til deres simulator POST, på baggrund af det kunne vi se at der var åbent for alle ip-adresser, til at poste stories ind i deres system og at vi ikke fik det samme hanesst id tilbage. Vi fandt ud af dette ved at lave et POST kald fra postman, det vi sende fra postman så ud som følgende:
+
+```
+{
+"post_title": "Y Combinator", 
+ "post_text": "test text", 
+ "hanesst_id": 9999999991, 
+ "post_type": "comment", 
+ "post_parent": -1, 
+ "username": "Vixo", 
+ "pwd_hash": "b0f3dc043a9c5c05f67651a8c9108b4c2b98e7246b2eea14cb204295", 
+ "post_url": "http://ycombinator.com"
+ }
+```
+Fra det Post request fik vi følgende tilbage. 
+
+```
+{
+    "post_title": "Y Combinator",
+    "post_text": "test text",
+    "hanesst_id": 1410065399,
+    "post_type": "comment",
+    "post_parent": -1,
+    "username": "Vixo",
+    "pwd_hash": "b0f3dc043a9c5c05f67651a8c9108b4c2b98e7246b2eea14cb204295",
+    "post_url": "http://ycombinator.com"
+}
+```
+
+Som det kan ses er det altså lykkedes os at poste en story til deres system via deres simulator POST. Som det også ses er der en fejl i deres hanesst id, idet vi ikke får det samme id tilbage som vi har sendt. 
+
+På baggrund af dette kan vi derfor konkluderer at deres system er yderst sårbart over for  DDos angreb. 
+
+Vi fandt også ud af i sammenhæng med ovennævnte problem at det var muligt at oprette stories, i deres system, uden at være logget ind. Det kunne vi gøre ved, at bruge deres simulator post API: /hackernew/post. Ved at bruge den, kunne vi skrive tilfældige usernames og passwords, og derved oprette både bruger og stories, igen bruge vi postman til dette, det vi sende fra postman så ud som følgende:
+
+```
+{
+"post_title": "Y Combinator", 
+ "post_text": "test text", 
+ "hanesst_id": 9999999992, 
+ "post_type": "comment", 
+ "post_parent": -1, 
+ "username": "JonasSimonsen", 
+ "pwd_hash": "b0f3dc043a9c5c05f67651a8c9108b4c2b98e7246b2eea14cb204295", 
+ "post_url": "http://ycombinator.com"
+ }
+ ```
+ 
+Som det kan ses poster vi en bruger som hedder “JonasSimonsen” til systemet. Det response vi fik tilbage fra deres system, så ud som følgende: 
+
+```
+{
+    "post_title": "Y Combinator",
+    "post_text": "test text",
+    "hanesst_id": 1410065400,
+    "post_type": "comment",
+    "post_parent": -1,
+    "username": "JonasSimonsen",
+    "pwd_hash": "b0f3dc043a9c5c05f67651a8c9108b4c2b98e7246b2eea14cb204295",
+    "post_url": "http://ycombinator.com"
+}
+```
+
+Da vi ikke selv er stødt på den bruger i vores CSV-filer med brugernavnet “JonasSimonsen”, tvivler vi meget på at de selv har oprettet en med præcist dette brugernavn, og vi betegner det derfor denne som en fejl.
+
+Alle ovenstående problemer blev rapporteret til gruppen som github issues til projektet. Gruppen så vores issues, gav feedback på dem og fiksede dem, i de tilfælde hvor de også så det som et problem. Men vi fik desværre ikke besked når de var fikset.  
+
+
+
+
+
+
 
 ### Architecture diagram
 her er vores filer i systemet
