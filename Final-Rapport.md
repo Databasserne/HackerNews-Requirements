@@ -121,7 +121,7 @@ Hele kontrakten ophæves, hvis der opstår et globalt problem. Dette kunne være
 
 ### 2.3. Maintenance and reliability
 
-Under forløbet med Hacker-New clonen har vi været opererer for Gruppe E. 
+Under forløbet med Hacker-News clonen har vi været operator for Gruppe E. 
 
 Efter langt om længe, endelig at finde ud af hvem gruppe E var, kunne vi endelig opererer deres system. Vi valgte at operere deres system på den måde at vi gik på opdagelse i det, ved at prøve og være helt normal bruger, vi fandt også deres endpoint på deres GitHub, så vi valgte også at udfordrede disse lidt ved hjælp af postman. 
 
@@ -195,5 +195,39 @@ Alle ovenstående problemer blev rapporteret til gruppen som github issues til p
 ## 3. Discussion
 
 ### 3.1. Technical discussion
+
+
+Selve udviklingen af Hacker New clonen har været en turbulent oplevelse. Vi har haft mange udfordringen i løbet af processen men vi har absolut også lært meget af det, hvilket har været rigtig godt. Det har gjort at vi har 3 gode og 3 mindre gode ting fra udviklingsfasen. 
+
+Vi har listet de 3 bedste ting her under som vi vil uddybe lidt nærmere. 
+
+* Stort datasæt
+* Vedligeholdelse
+* “The after part”
+
+En af de bedste ting ved dette projekt har været at få lov til at arbejde med et system som skulle kunne håndtere en stor mængde data, og ikke de typiske små projekter man har arbejdet med i skoletiden. På den måde har man fået et bedre indblik i hvordan det vil være at lave et “rigtigt” system og hvad de skal kunne håndtere.
+
+En anden rigtig god ting som vi har lært en masse af, har været brugen af Docker og Docker Swarm. Vi har fået et helt nyt kendskab til hvordan man kan opbygge store systemet med mulighed for mange brugere og request uden større voldsomme omkostninger til drift ydermere har vi og lært hvordan vi kan vedligeholde sådanne systemer på en sådan måde at de kan være fuldt funktionsdygtige og har en ekstrem høj oppetid, selv under både opdatering og eventuelle nedbrud.  
+
+Delen som sker efter man er færdig med sit system, er igen noget som er helt nyt for os, da vi ikke har haft lært om det tidligere. Hele den del med monitorering/scaling og anden vedligeholdelse. Det har været nyt og spændende og enormt relevant at lære om, da det er noget man skal bruge til at holde ens systemer oppe, og mindske de fejl man nu engang vil få på en bedre og mere effektiv måde.
+
+Vi har listet de 3 største problemer her under som vi vil uddybe lidt nærmere.
+
+* Mange fejl 400 i starten 
+* Prometheus 
+* Operator
+
+I starten havde vi problemer med at vi fik en masse fejl 400(bad request) som blev vist på Helge’s error chart, men da vi ikke havde sat noget monitoring system op, blev vi først klar over det sent, hvilket resulterede i vi havde fået mangel fejl. Selve udredningen af fejlene var også noget som tog os lang tid, idet vi ikke havde en decideret logfil og evt. Monitoreringsværktøj til at fortælle os præcis hvor i vores system fejlen opstod. Ved at vi skulle bruge så lang tid på at finde fejlen, gjorde også at vi hurtigt kom bagud i forhold til diverse dokumentation og andre implementeringer. 
+
+Da vi kom til at skulle implementere Prometheus og Grafana i vores system blev vi igen presset da vi havde problemer med at få det op at køre ordentligt, vi brugte lang tid på at sætte det op, og den ene uge vi havde til at få det igang virkede ikke som tilstrækkelig tid til at kunne fuldføre det. Dette gjorde sig også gældende i andre dele af systemet da vi ofte havde flere afleveringer på tværs af vores fag. 
+
+Ideen med operator grupper virker god, idet at man prøver det, men da kommunikationen, i vores tilfælde, har været minimal, har vi ikke fået stort udbytte af dette. Hvilket har gjort vi selv har skullet operere vores system, og finde fejl. Det gav os problemer specielt tidligt, med de mange 400 fejl, da vi havde regnet med vores operators ville have gjort os opmærksomme på dette.
+
+
+
+
+
+
+
 
 ### 3.2. Group work reflection & Lessons learned
